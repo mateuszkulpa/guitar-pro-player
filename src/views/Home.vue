@@ -1,18 +1,16 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>
+    <h1>{{ counter }}</h1>
+    <button @click="counter++">increment</button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import { ref } from "vue";
 export default {
-  name: "Home",
-  components: {
-    HelloWorld
+  setup() {
+    const counter = ref(0);
+    return { counter };
   }
 };
 </script>
